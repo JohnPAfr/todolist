@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Item from './Item'
 import './style.css'
 
-class TodoBis extends Component {
+class TodoItem extends Component {
     constructor(props) {
         super(props)
 
@@ -17,7 +17,7 @@ class TodoBis extends Component {
             return
         subList = subList.map(
             item =>
-            <Item key={item.id} item={item} />
+            <Item key={item.id} item={item} handleCallback={this.handleCallback}/>
             )
       
           return subList
@@ -34,15 +34,13 @@ class TodoBis extends Component {
     return (
       <div>
           <Item key={item.id} item={item} handleCallback={this.handleCallback} />
-          {/*ITEM PRINCIPAL*/}
 
           <div className={(item.subList === undefined) ? '' : 'subList'}>
             {this.renderSubList()}
-            {/*ITEM Secondaire*/}
           </div>
       </div>
     );
   }
 }
 
-export default TodoBis;
+export default TodoItem;

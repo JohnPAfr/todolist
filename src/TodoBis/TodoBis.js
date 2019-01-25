@@ -50,14 +50,16 @@ class TodoBis extends Component {
     let list = this.state.todoList
     if ('parent' in item) {
       let parent = list.filter(obj => obj.id === item.parent)
-      console.log(item)
-      console.log(parent)
+      parent = parent[0].subList.filter(obj => obj.id !== item.id)
+      console.log(list)
+      
     } else {
       list = list.filter(obj => obj.id !== item.id)
       this.setState({
         todoList: list
       }) 
     }
+    
   }
   
   render() {
