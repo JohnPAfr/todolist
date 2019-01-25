@@ -1,0 +1,31 @@
+.subList {
+    margin: 5px 0 5px 30px;
+    padding: 5px;
+}
+
+.item-container {
+    width: 90%;
+    height: auto;
+    border: 2px solid #434c4d;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.item-container:hover {
+    opacity: 0.5;
+}
+
+.btn {
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    position: absolute;
+    right: 5px
+}
+
+.addbar input{
+    width: 90%;
+    margin: 5px;
+    padding: 5px;
+}
