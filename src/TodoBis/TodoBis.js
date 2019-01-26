@@ -47,17 +47,31 @@ class TodoBis extends Component {
   }
 
   handleDelete(item) {
-    let list = this.state.todoList
+    let list = [...this.state.todoList]
+
     if ('parent' in item) {
-      let parent = list.filter(obj => obj.id === item.parent)
-      parent = parent[0].subList.filter(obj => obj.id !== item.id)
-      console.log(list)
-      
-    } else {
-      list = list.filter(obj => obj.id !== item.id)
+      let parent = list.find(obj => obj.id === item.parent)
+      parent.subList = parent.subList.filter(obj => obj.id !== item.id)
+      let subList = [...parent.subList]
+
+      for (var i = item.id; i < subList.length; i++) {
+        subList[i].id -= 1
+      }
+      parent.subList = subList
+      list[parent.id] = parent
       this.setState({
         todoList: list
-      }) 
+      })
+
+
+    } else {
+      list = list.filter(obj => obj.id !== item.id)
+      for (var j = item.id; j < list.length; j++) {
+        list[j].id -= 1
+      }
+      this.setState({
+        todoList: list
+      })
     }
     
   }

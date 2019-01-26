@@ -35,7 +35,7 @@ class TodoItem extends Component {
       <div>
           <Item key={item.id} item={item} handleCallback={this.handleCallback} />
 
-          <div className={(item.subList === undefined) ? '' : 'subList'}>
+          <div className={(item.subList === undefined || item.subList.length === 0) ? '' : 'subList'}>
             {this.renderSubList()}
           </div>
       </div>

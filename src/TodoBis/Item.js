@@ -7,8 +7,9 @@ class Item extends Component {
         const {item} = this.props
         const task = item.task
         return (
-            <div onClick={() => this.props.handleCallback(this.props.item)} className='item-container'>
+            <div  className='item-container'>
                 <span>{task}</span>
+                <i className="far fa-trash-alt btn-delete" onClick={() => this.props.handleCallback(this.props.item)}></i>
             </div>
         )
     }
