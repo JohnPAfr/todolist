@@ -1,6 +1,16 @@
 /***********  
 ============
-TODOLIST CSS
+    MAIN
+============
+************/
+.nav-more {
+    -webkit-box-shadow: 0 0 5px rgba(57, 63, 72, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(57, 63, 72, 0.5);
+    box-shadow: 0 0 5px rgba(57, 63, 72, 0.5);
+}
+/***********  
+============
+  TODOLIST
 ============
 ************/
 .subList {
