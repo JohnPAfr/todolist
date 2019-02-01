@@ -17,7 +17,13 @@ class TodoItem extends Component {
             return
         subList = subList.map(
             item =>
-            <Item key={item.id} item={item} handleCallback={this.handleCallback}/>
+             <Item 
+                key={item.id} 
+                item={item} 
+                handleModify={(item) => this.props.handleModify(item)} 
+                handleModifyInput={(input, item) => this.props.handleModifyInput(input, item)}
+                handleCallback={this.handleCallback}
+                />
             )
       
           return subList
@@ -33,7 +39,14 @@ class TodoItem extends Component {
       
     return (
       <div>
-          <Item key={item.id} item={item} handleCallback={this.handleCallback} />
+          <Item 
+            key={item.id} 
+            item={item} 
+            handleModify={(item) => this.props.handleModify(item)} 
+            handleModifyInput={(input, item) => this.props.handleModifyInput(input, item)}
+            handleCallback={this.handleCallback} 
+            handleSubAdd={(item) => this.props.handleSubAdd(item)}
+          />
 
           <div className={(item.subList === undefined || item.subList.length === 0) ? '' : 'subList'}>
             {this.renderSubList()}
