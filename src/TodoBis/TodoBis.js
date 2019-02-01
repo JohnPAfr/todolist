@@ -78,7 +78,7 @@ class TodoBis extends Component {
   
   render() {
     return (
-      <div>
+      <div className='App'>
         <AddBar handleAdding={this.handleAdding} />
         {this.renderTodoItems()}
       </div>
